@@ -47,7 +47,7 @@ const projects = [
   },
 ];
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbwn6nrxVqdRsJiWdQV-dl4R6zXJkOqt65XaX-ZW-ll-05sq46vAFOh2bUl_ERoXUSpz/exec";
+"https://script.google.com/macros/s/AKfycbzRZQjtNevRmYon7lT_AMS4wqfYX72k2tWW7Nd-ZHlstHuW-gFinsEWEgEvojT-cI5r/exec";
 
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();

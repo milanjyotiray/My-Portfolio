@@ -58,18 +58,17 @@ function App() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzaUNVOhsBmWfV9aprDBFVnuai-tblPszLBoyHr8kyKcX9Z3_lFlPTvAvGnP-MTuNs/exec"; // Google Apps Script ka URL
-    const data = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    };
+    const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+    
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("message", formData.message);
   
     try {
       let response = await fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
+        body: data,
       });
   
       if (response.ok) {
@@ -83,6 +82,7 @@ function App() {
       alert("Error sending data!");
     }
   };
+  
   
 
   return (

@@ -46,44 +46,30 @@ const projects = [
     tags: ['Mobile App', 'Entertainment', 'Social'],
   },
 ];
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbwn6nrxVqdRsJiWdQV-dl4R6zXJkOqt65XaX-ZW-ll-05sq46vAFOh2bUl_ERoXUSpz/exec";
 
-function App() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.currentTarget);
+
+  try {
+    await fetch(scriptURL, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors", // CORS error avoid karega
+    });
+
+    alert("Form submitted successfully!");
+  } catch (error) {
+    console.error("Error!", error);
+  }
+};
+
+const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-  
-    const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
-    
-    const data = new FormData();
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("message", formData.message);
-  
-    try {
-      let response = await fetch(scriptURL, {
-        method: "POST",
-        body: data,
-      });
-  
-      if (response.ok) {
-        alert("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Something went wrong!");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error sending data!");
-    }
-  };
-  
-  
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -335,6 +321,6 @@ function App() {
       </footer>
     </div>
   );
-}
+};
 
 export default App;

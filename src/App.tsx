@@ -92,7 +92,7 @@ function App() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
-                src="/src/photo.jpeg"
+                src="/photo.jpeg"
                 alt="Profile"
                 className="relative w-full h-[400px] object-cover object-top rounded-lg"
               />

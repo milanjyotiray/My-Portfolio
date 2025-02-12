@@ -244,13 +244,13 @@ const App: React.FC = () => {
               Contact
             </label>
             <input
-              type="number"
+              type="text"
               id="contact"
               name="contact"
               value={formData.contact}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
               className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your email"
+              placeholder="Enter your contact number"
               required/>
           </div>
           <div>

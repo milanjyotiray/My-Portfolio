@@ -72,7 +72,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', contact: '', address: '' });
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -238,6 +238,34 @@ const App: React.FC = () => {
               placeholder="Enter your name"
               required
             />
+          </div>
+          <div>
+            <label htmlFor="contact" className="block text-sm font-medium text-gray-400 mb-2">
+              Contact
+            </label>
+            <input
+              type="number"
+              id="contact"
+              name="contact"
+              value={formData.contact}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
+              required/>
+          </div>
+          <div>
+            <label htmlFor="address" className="block text-sm font-medium text-gray-400 mb-2">
+              Address
+            </label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your address"
+              required/>
           </div>
 
           <div>

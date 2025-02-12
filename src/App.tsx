@@ -46,8 +46,7 @@ const projects = [
     tags: ['Mobile App', 'Entertainment', 'Social'],
   },
 ];
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbzRZQjtNevRmYon7lT_AMS4wqfYX72k2tWW7Nd-ZHlstHuW-gFinsEWEgEvojT-cI5r/exec";
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzwHCinWDfBkGdFe5l9U0ew7AjqnDNBL13bG67I3ir4rfpG0fGVmswndepOjUO-MW6U/exec';
 
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
@@ -55,17 +54,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   const formData = new FormData(e.currentTarget);
 
   try {
-    await fetch(scriptURL, {
+    const response = await fetch(scriptURL, {
       method: "POST",
       body: formData,
-      mode: "no-cors", // CORS error avoid karega
     });
 
-    alert("Form submitted successfully!");
+    if (response.ok) {
+      alert("Form submitted successfully!");
+    } else {
+      alert("Form submission failed!");
+    }
   } catch (error) {
     console.error("Error!", error);
   }
 };
+
 
 const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);

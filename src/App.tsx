@@ -69,7 +69,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   }
 };
 
-
 const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '', contact: '', address: '' });
@@ -99,7 +98,7 @@ const App: React.FC = () => {
 
       {/* About Section */}
       <section id="about" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative group">
@@ -109,7 +108,6 @@ const App: React.FC = () => {
                 alt="Profile"
                 className="relative w-full h-[400px] object-cover object-top rounded-lg"
               />
-
             </div>
             <div className="space-y-6">
               <div className="bg-gray-900/80 p-8 rounded-lg backdrop-blur-sm">
@@ -204,152 +202,113 @@ const App: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-<section id="contact" className="py-20 px-4 bg-gray-900">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-4xl font-bold mb-12 text-center">Get In Touch</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div className="bg-black p-8 rounded-xl border border-gray-800">
-        <h3 className="text-2xl font-semibold mb-6 text-blue-400">Contact Info</h3>
-        <div className="space-y-4">
-          <p className="text-gray-300">Feel free to reach out for collaborations or just a friendly hello</p>
-          <div className="text-gray-300 space-y-2 mt-4">
-            <p><strong>📍 Address:</strong> Agomani, Assam, India-783335</p>
-            <p><strong>📞 Phone:</strong> +91 9678165375</p>
-            <p><strong>✉️ Email:</strong> milanjyotiray84@gmail.com</p>
-          </div>
-          <div className="mt-8">
-            <SocialLinks />
+      <section id="contact" className="py-20 px-4 bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center">Get In Touch</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-black p-8 rounded-xl border border-gray-800">
+              <h3 className="text-2xl font-semibold mb-6 text-blue-400">Contact Info</h3>
+              <div className="space-y-4">
+                <p className="text-gray-300">Feel free to reach out for collaborations or just a friendly hello</p>
+                <div className="text-gray-300 space-y-2 mt-4">
+                  <p><strong>📍 Address:</strong> Agomani, Assam, India-783335</p>
+                  <p><strong>📞 Phone:</strong> +91 9678165375</p>
+                  <p><strong>✉️ Email:</strong> milanjyotiray84@gmail.com</p>
+                </div>
+                <div className="mt-8">
+                  <SocialLinks />
+                </div>
+              </div>
+            </div>
+            <div className="bg-black p-8 rounded-xl border border-gray-800">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-gray-800 text-gray-300 p-3 rounded-md border border-gray-700"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-gray-800 text-gray-300 p-3 rounded-md border border-gray-700"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact" className="block text-sm font-medium text-gray-400 mb-2">
+                    Contact
+                  </label>
+                  <input
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    value={formData.contact}
+                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                    className="w-full bg-gray-800 text-gray-300 p-3 rounded-md border border-gray-700"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="address" className="block text-sm font-medium text-gray-400 mb-2">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    className="w-full bg-gray-800 text-gray-300 p-3 rounded-md border border-gray-700"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-gray-800 text-gray-300 p-3 rounded-md border border-gray-700"
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="bg-black p-8 rounded-xl border border-gray-800">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="contact" className="block text-sm font-medium text-gray-400 mb-2">
-              Contact
-            </label>
-            <input
-              type="text"
-              id="contact"
-              name="contact"
-              value={formData.contact}
-              onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your contact number"
-              required/>
-          </div>
-          <div>
-            <label htmlFor="address" className="block text-sm font-medium text-gray-400 mb-2">
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your address"
-              required/>
-          </div>
+      </section>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your message"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      {/* Footer Section */}
-      <footer className="bg-gray-900/80 backdrop-blur-sm border-t border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-blue-400">Milanjyoti Ray</h3>
-              <p className="text-gray-400">Creating innovative solutions through code and creativity</p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-              <ul className="space-y-2">
-                {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <a href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-blue-400 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Connect</h4>
-              <SocialLinks />
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Location</h4>
-              <p className="text-gray-400">Agomani</p>
-              <p className="text-gray-400">Assam, India - 783335</p>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <p className="text-center text-gray-400">
-              © {new Date().getFullYear()} Milanjyoti Ray. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

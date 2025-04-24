@@ -48,7 +48,7 @@ const projects = [
   {
     title: 'Nexuvo',
     description: 'AI-powered ATS-friendly resume builder with LinkedIn import, PDF download, and chatbot-based input.',
-    image: 'https://images.unsplash.com/photo-1532079649-80d0639f50e5?auto=format&fit=crop&w=800&q=80',
+    image: 'Nexuvo.png',
     tags: ['AI', 'Resume Builder', 'Web Development'],
   }
 ];

@@ -33,24 +33,7 @@ const skills = [
 ];
 
 const projects = [
-  {
-    title: 'NextPaper',
-    description: 'AI-powered question paper prediction for competitive exams with detailed solutions and mock tests',
-    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80',
-    tags: ['AI', 'Education', 'Web Development'],
-  },
-  {
-    title: 'PerformX',
-    description: 'Platform for performers to showcase talent and get opportunities with realtime leaderboard',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
-    tags: ['Mobile App', 'Entertainment', 'Social'],
-  },
-  {
-    title: 'Nexuvo',
-    description: 'AI-powered ATS-friendly resume builder with LinkedIn import, PDF download, and chatbot-based input.',
-    image: 'public/Nexuvo.png',
-    tags: ['AI', 'Resume Builder', 'Web Development'],
-  }
+  
 ];
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzwHCinWDfBkGdFe5l9U0ew7AjqnDNBL13bG67I3ir4rfpG0fGVmswndepOjUO-MW6U/exec';
